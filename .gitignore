@@ -23,4 +23,5 @@ dist-ssr
 *.sln
 *.sw?
 
+# Im not going to repeat the construction calculator incident...
 .env
