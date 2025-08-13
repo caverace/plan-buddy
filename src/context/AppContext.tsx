@@ -1,12 +1,3 @@
-/**
- * AppContext.tsx
- *
- * Exports a react context that
- * provides database related states.
- *
- * Created 12-8-25
- */
-
 import {
 	createContext,
 	useState,
@@ -23,10 +14,18 @@ type AppContextType = {
 };
 
 // The context that will be used in the provider component, using the app context type.
-const AppContext = createContext<AppContextType | undefined>(undefined);
+export const AppContext = createContext<AppContextType | undefined>(undefined);
 
-// Provider component
-export const ThemeProvider = ({ children }: { children: ReactNode }) => {
+/**
+ * Provider component for AppContext
+ *
+ * Supplies all the database states to its children.
+ *
+ * @param {object} props
+ * @param {ReactNode} props.children - Components that should have context.
+ * @returns {JSX.Element} The context wrapper
+ */
+export const AppProvider = ({ children }: { children: ReactNode }) => {
 	// Create states to be provided to the app.
 	// Boards
 	const [boards, setBoards] = useState<any>();
